@@ -6,6 +6,8 @@ import ErrorPage from "../pages/ErrorPage/ErrorPage";
 import ListedBooks from "../pages/ListedBooks/ListedBooks";
 import PagesToRead from "../pages/PagesToRead/PagesToRead";
 import BookDetails from "../pages/BookDetails/BookDetails";
+import ReadBooks from "../pages/ReadBooks/ReadBooks";
+import WishlistBooks from "../pages/WishlistBooks/WishlistBooks";
 
 export const router = createBrowserRouter([
   {
@@ -17,12 +19,29 @@ export const router = createBrowserRouter([
     children: [
       {
         index: true,
+        path: "/",
         loader: () => fetch("/booksData.json"),
         Component: Home,
       },
       {
         path: "listed-books",
         Component: ListedBooks,
+        children: [
+          // {
+          //   index: true,
+          //   path: "listed-books",
+          //   Component: ReadBooks
+          // },
+          {
+            path: "read-books",
+            loader: () => fetch("/booksData.json"),
+            Component: ReadBooks
+          },
+          {
+            path: "wishlist-books",
+            Component: WishlistBooks
+          }
+        ]
       },
       {
         path: "pages-to-read",

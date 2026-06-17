@@ -1,10 +1,11 @@
+import bannerImage from "../../assets/books.jpg"
 const Hero = () => {
   return (
     <div className="hero bg-[#1313130D] py-10 rounded-xl mt-5 md:mt-10">
       <div className="hero-content flex-col md:flex-row-reverse">
         <div>
           <img
-            src="https://i.ibb.co.com/tYSWRfG/catcherrye-edited-1-800x.png"
+            src={bannerImage}
             className="max-w-sm rounded-lg shadow-2xl h-80 lg:h-full"
           />
         </div>

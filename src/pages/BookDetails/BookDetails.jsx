@@ -1,10 +1,12 @@
 import { useLoaderData, useParams } from "react-router";
+import { addToLocalStorage } from "../../utilities/utilities";
 
 const BookDetails = () => {
   const id = useParams();
   const books = useLoaderData();
   const singleBook = books.find((book) => book.bookId === +id.bookId);
   const {
+    bookId,
     image,
     bookName,
     author,
@@ -16,7 +18,9 @@ const BookDetails = () => {
     totalPages,
     yearOfPublishing,
   } = singleBook;
-
+  const handleReadBtn = (id) => {
+      addToLocalStorage(id)
+  }
   return (
     <div className="card card-side gap-5 flex-col items-center md:flex-row">
       <figure className="bg-base-300 rounded-2xl">
@@ -58,7 +62,7 @@ const BookDetails = () => {
           </div>
         </div>
         <div className="card-actions">
-          <button className="btn bg-white border border-[#1313134D]">
+          <button onClick={() => handleReadBtn(bookId)} className="btn bg-white border border-[#1313134D]">
             Read
           </button>
           <button className="btn bg-[#50B1C9] border border-[#50B1C9] text-white">

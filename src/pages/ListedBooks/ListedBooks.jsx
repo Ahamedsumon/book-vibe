@@ -1,4 +1,6 @@
 import { IoIosArrowDown } from "react-icons/io";
+import { NavLink, Outlet } from "react-router";
+import "./ListedBooks.css"
 const ListedBooks = () => {
   return (
     <div>
@@ -6,8 +8,7 @@ const ListedBooks = () => {
         Books
       </h2>
       <div className="text-center">
-        {/* <a className="btn bg-[#23BE0A] text-white mt-5">Sort By</a> */}
-
+        
         <div className="dropdown dropdown-bottom mt-5">
           <div
             tabIndex={0}
@@ -32,8 +33,17 @@ const ListedBooks = () => {
           </ul>
         </div>
       </div>
+      <div className="flex gap-3 listedBooks mt-10">
+        <NavLink to="/listed-books/read-books" className="">Read Books</NavLink>
+        <NavLink to="/listed-books/wishlist-books" className="">Wishlist Books</NavLink>
+      </div>
+        <div className="border-b ml-23"></div>
+        <Outlet></Outlet>
     </div>
   );
 };
 
 export default ListedBooks;
+
+
+// border border-b-0 p-1 rounded-t-md
