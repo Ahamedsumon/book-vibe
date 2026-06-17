@@ -1,3 +1,8 @@
- .active{
-    border: 1px solid green;
+.active {
+  border: 1px solid #23be0a;
+  border-radius: 5px;
+  color: #23be0a;
+}
+ul a {
+  padding: 4px 6px;
 }

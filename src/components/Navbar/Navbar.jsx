@@ -3,7 +3,7 @@ import "./Navbar.css";
 
 const Navbar = () => {
   return (
-    <div className="navbar px-0">
+    <div className="navbar px-0 work-sans-font">
       <div className="navbar-start">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -32,10 +32,10 @@ const Navbar = () => {
             <NavLink to="/pages-to-read">Pages to Read</NavLink>
           </ul>
         </div>
-        <a className=" text-xl cursor-pointer">Book Vibe</a>
+        <a className=" text-xl font-bold cursor-pointer">Book Vibe</a>
       </div>
       <div className="navbar-center hidden lg:flex">
-        <ul className="menu menu-horizontal px-1">
+        <ul className="menu menu-horizontal gap-4 px-1">
           <NavLink to="/">Home</NavLink>
           <NavLink to="/listed-books">Listed Books</NavLink>
           <NavLink to="/pages-to-read">Pages to Read</NavLink>
