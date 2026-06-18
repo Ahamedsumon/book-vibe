@@ -1,4 +1,4 @@
-const ReadBook = ({ book }) => {
+const WishlistBook = ({ book }) => {
   const {
     image,
     bookName,
@@ -10,7 +10,6 @@ const ReadBook = ({ book }) => {
     totalPages,
     yearOfPublishing,
   } = book;
-
   return (
     <div className="card card-side gap-5  items-center flex-row shadow mb-3 border border-gray-200">
       <figure className="bg-base-300 m-3 rounded-2xl">
@@ -56,4 +55,4 @@ const ReadBook = ({ book }) => {
   );
 };
 
-export default ReadBook;
+export default WishlistBook;

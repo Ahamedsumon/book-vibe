@@ -1,8 +1,8 @@
-.listedBooks .active{
-    padding: 4px;
-    border-radius: 5px;
-    border-bottom-right-radius: 0px;
-    border-bottom-left-radius: 0px;
-    border: 1px solid gray;
-    border-bottom: none;
+.listedBooks .active {
+  padding: 4px;
+  border-radius: 5px;
+  border-bottom-right-radius: 0px;
+  border-bottom-left-radius: 0px;
+  border: 1px solid #13131326;
+  border-bottom: none;
 }

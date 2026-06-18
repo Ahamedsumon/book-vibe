@@ -1,5 +1,10 @@
 import { useLoaderData, useParams } from "react-router";
 import { addToLocalStorage } from "../../utilities/utilities";
+import { addBooksToWishlist } from "../../utilities/wishlistUtilities";
+// import Swal from "sweetalert2";
+// import withReactContent from "sweetalert2-react-content";
+
+// const MySwal = withReactContent(Swal);
 
 const BookDetails = () => {
   const id = useParams();
@@ -19,8 +24,16 @@ const BookDetails = () => {
     yearOfPublishing,
   } = singleBook;
   const handleReadBtn = (id) => {
-      addToLocalStorage(id)
-  }
+    addToLocalStorage(id);
+    // MySwal.fire({
+    //   title: "Good job!",
+    //   text: "You clicked the button!",
+    //   icon: "success",
+    // });
+  };
+  const handleWishlistBtn = (id) => {
+    addBooksToWishlist(id);
+  };
   return (
     <div className="card card-side gap-5 flex-col items-center md:flex-row">
       <figure className="bg-base-300 rounded-2xl">
@@ -62,10 +75,16 @@ const BookDetails = () => {
           </div>
         </div>
         <div className="card-actions">
-          <button onClick={() => handleReadBtn(bookId)} className="btn bg-white border border-[#1313134D]">
+          <button
+            onClick={() => handleReadBtn(bookId)}
+            className="btn bg-white border border-[#1313134D]"
+          >
             Read
           </button>
-          <button className="btn bg-[#50B1C9] border border-[#50B1C9] text-white">
+          <button
+            onClick={() => handleWishlistBtn(bookId)}
+            className="btn bg-[#50B1C9] border border-[#50B1C9] text-white"
+          >
             Wishlist
           </button>
         </div>
